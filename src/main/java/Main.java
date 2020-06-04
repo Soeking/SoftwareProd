@@ -16,10 +16,11 @@ public class Main {
 //        Socket socket = new Socket(addr, port);
 
         Screen frame = new Screen();
-        int[] x = {20, 40, 80, 200};
-        int[] y = {120, 340, 80, 200};
+        int[] x = {20, 40, 80, 800};
+        int[] y = {120, 340, 80, 800};
         User user = new User(x, y);
-        frame.paint(user);
+        frame.setUser(user);
+        frame.repaint();
 
         Gson gson = new Gson();
         System.out.println(gson.toJson(user));
