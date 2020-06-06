@@ -11,12 +11,23 @@ repositories {
 }
 
 dependencies {
-    //testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation("junit:junit:4.12")
     implementation("com.google.code.gson:gson:2.8.6")
 }
 
 application {
     mainClassName = "Main"
+}
+
+subprojects {
+    apply(plugin = "java")
+    apply(plugin = "application")
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        implementation("com.google.code.gson:gson:2.8.6")
+    }
 }
 
 val jar by tasks.getting(Jar::class) {
@@ -35,5 +46,17 @@ val jar by tasks.getting(Jar::class) {
 val run by tasks.getting(JavaExec::class) {
     if (project.hasProperty("args")) {
         args = (project.property("args") as String).split("\\s+")
+    }
+}
+
+project(":server") {
+    application {
+        mainClassName = "Server"
+    }
+
+    val run by tasks.getting(JavaExec::class) {
+        if (project.hasProperty("args")) {
+            args = (project.property("args") as String).split("\\s+")
+        }
     }
 }
