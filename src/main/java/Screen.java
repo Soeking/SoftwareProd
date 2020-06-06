@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.util.Random;
 
-public class Screen extends JFrame implements MouseMotionListener {
+public class Screen extends JFrame implements MouseMotionListener,Runnable {
     int width = 800;
     int height = 800;
     User user;
@@ -32,6 +32,11 @@ public class Screen extends JFrame implements MouseMotionListener {
         graphics.setColor(new Color(user.color));
         int len = user.x.length;
         graphics.drawPolyline(user.x, user.y, len);
+    }
+
+    @Override
+    public void run() {
+
     }
 
     @Override
