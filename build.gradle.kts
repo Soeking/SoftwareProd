@@ -14,6 +14,7 @@ dependencies {
     testImplementation("junit:junit:4.12")
     implementation("com.google.code.gson:gson:2.8.6")
     implementation("org.java-websocket:Java-WebSocket:1.5.1")
+    implementation("org.slf4j:slf4j-simple:1.7.25")
 }
 
 application {
@@ -29,6 +30,7 @@ subprojects {
     dependencies {
         implementation("com.google.code.gson:gson:2.8.6")
         implementation("org.java-websocket:Java-WebSocket:1.5.1")
+        implementation("org.slf4j:slf4j-simple:1.7.25")
     }
 }
 
