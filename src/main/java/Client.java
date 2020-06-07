@@ -30,24 +30,20 @@ public class Client extends WebSocketClient {
 
     @Override
     public void onOpen(ServerHandshake handshakedata) {
-        System.out.println("connect");
+
     }
 
     @Override
     public void onMessage(String message) {
         List<User> users = gson.fromJson(message, list);
-        for (User user : users) {
-            frame.setUser(user);
-            frame.repaint();
-        }
-//        users.parallelStream().forEach(user ->
-//                frame.setUser(user)
-//        );
+        frame.setUser(users);
+        frame.repaint();
     }
 
     @Override
     public void onClose(int code, String reason, boolean remote) {
         System.out.println(reason);
+        System.exit(code);
     }
 
     @Override

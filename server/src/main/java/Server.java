@@ -36,7 +36,6 @@ public class Server extends WebSocketServer {
     @Override
     public void onMessage(WebSocket conn, String message) {
         Receive receive = gson.fromJson(message, Receive.class);
-        System.out.println(message);
 
         if (userList.contains(receive.color)) {
             for (UserData user : users) {
