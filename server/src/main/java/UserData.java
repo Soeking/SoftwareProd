@@ -6,10 +6,10 @@ public class UserData {
     List<Integer> x = new ArrayList<>();
     List<Integer> y = new ArrayList<>();
 
-    public UserData(Send send) {
-        this.color = send.color;
-        this.x.add(send.x);
-        this.y.add(send.y);
+    public UserData(Receive receive) {
+        this.color = receive.color;
+        this.x.add(receive.x);
+        this.y.add(receive.y);
     }
 
     @Override

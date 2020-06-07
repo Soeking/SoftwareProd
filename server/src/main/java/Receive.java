@@ -1,9 +1,9 @@
-public class Send {
+public class Receive {
     int color;
     int x;
     int y;
 
-    public Send(int color, int x, int y) {
+    public Receive(int color, int x, int y) {
         this.color = color;
         this.x = x;
         this.y = y;
@@ -11,7 +11,7 @@ public class Send {
 
     @Override
     public String toString() {
-        return "Send{" +
+        return "Receive{" +
                 "color=" + color +
                 ", x=" + x +
                 ", y=" + y +

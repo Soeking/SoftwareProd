@@ -17,7 +17,7 @@ dependencies {
 }
 
 application {
-    mainClassName = "Main"
+    mainClassName = "Client"
 }
 
 subprojects {
@@ -34,7 +34,7 @@ subprojects {
 
 val jar by tasks.getting(Jar::class) {
     manifest {
-        attributes["Main-Class"] = "Main"
+        attributes["Main-Class"] = "Client"
     }
 
     from(

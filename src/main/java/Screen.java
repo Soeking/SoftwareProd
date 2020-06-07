@@ -29,21 +29,25 @@ public class Screen extends JFrame implements MouseMotionListener,Runnable {
     public void paint(Graphics g) {
         super.paint(g);
         Graphics graphics = getContentPane().getGraphics();
-        graphics.setColor(new Color(user.color));
-        int len = user.x.length;
-        graphics.drawPolyline(user.x, user.y, len);
+        if (user!=null) {
+            graphics.setColor(new Color(user.color));
+            int len = user.x.length;
+            graphics.drawPolyline(user.x, user.y, len);
+        }
     }
 
     @Override
     public void run() {
-
+        while (true){
+            repaint();
+        }
     }
 
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {
         Send s = new Send(color, mouseEvent.getX(), mouseEvent.getY());
         String str = gson.toJson(s);
-        Main.out.println(str);
+        Client.client.send(str);
     }
 
     @Override
