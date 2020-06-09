@@ -13,7 +13,7 @@ public class Client extends WebSocketClient {
     Gson gson = new Gson();
     Type list = new TypeToken<List<User>>() {
     }.getType();
-    static Screen frame = new Screen();
+    Screen frame = new Screen();
 
     public Client(URI serverUri) {
         super(serverUri);
@@ -24,8 +24,6 @@ public class Client extends WebSocketClient {
         int port = args.length > 1 ? Integer.parseInt(args[1]) : 8080;
         client = new Client(new URI("ws://" + ip + ":" + port));
         client.connect();
-
-        new Thread(frame).start();
     }
 
     @Override

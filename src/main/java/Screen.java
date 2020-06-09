@@ -7,7 +7,7 @@ import java.awt.event.MouseMotionListener;
 import java.util.List;
 import java.util.Random;
 
-public class Screen extends JFrame implements MouseMotionListener,Runnable {
+public class Screen extends JFrame implements MouseMotionListener {
     int width = 800;
     int height = 800;
     List<User> users;
@@ -37,12 +37,6 @@ public class Screen extends JFrame implements MouseMotionListener,Runnable {
                 int len = user.x.length;
                 graphics.drawPolyline(user.x, user.y, len);
             });
-        }
-    }
-
-    @Override
-    public void run() {
-        while (true){
         }
     }
 
