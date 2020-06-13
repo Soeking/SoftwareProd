@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class User {
     int color;
-    int[] x;
-    int[] y;
+    int[][] x;
+    int[][] y;
 
     @Override
     public String toString() {

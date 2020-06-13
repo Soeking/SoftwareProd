@@ -40,8 +40,7 @@ public class Server extends WebSocketServer {
         if (userList.contains(receive.color)) {
             for (UserData user : users) {
                 if (user.color == receive.color) {
-                    user.x.add(receive.x);
-                    user.y.add(receive.y);
+                    user.addLast(receive);
                 }
             }
         } else {
