@@ -49,7 +49,6 @@ public class Server extends WebSocketServer {
         }
 
         broadcast(gson.toJson(users));
-
     }
 
     @Override

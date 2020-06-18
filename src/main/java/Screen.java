@@ -12,7 +12,7 @@ public class Screen extends JFrame implements MouseMotionListener, MouseListener
     int width = 800;
     int height = 800;
     List<User> users;
-    int color = new Random().nextInt(8388608);
+    int color = new Random().nextInt(16777215);
     Gson gson = new Gson();
 
     public Screen() {
