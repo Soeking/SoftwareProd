@@ -22,9 +22,16 @@ public class Screen extends JFrame implements MouseMotionListener, MouseListener
         addMouseMotionListener(this);
         addMouseListener(this);
         JButton button = new JButton("c");
-        button.setBounds(10,720,50,50);
+        button.setMaximumSize(new Dimension(50, 50));
+        button.setBounds(10, 720, 50, 50);
+        button.setBackground(Color.CYAN);
         button.addActionListener(actionEvent -> Client.client.send("clear"));
-        add(new JPanel().add(button));
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        panel.add(button);
+        panel.setBounds(0,0,width,height);
+        panel.setVisible(true);
+        getContentPane().add(panel);
     }
 
     public void setUser(List<User> users) {
