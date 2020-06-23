@@ -35,17 +35,22 @@ public class Server extends WebSocketServer {
 
     @Override
     public void onMessage(WebSocket conn, String message) {
-        Receive receive = gson.fromJson(message, Receive.class);
-
-        if (userList.contains(receive.color)) {
-            for (UserData user : users) {
-                if (user.color == receive.color) {
-                    user.addLast(receive);
-                }
-            }
+        if ("clear".equals(message)) {
+            users.clear();
+            userList.clear();
         } else {
-            userList.add(receive.color);
-            users.add(new UserData(receive));
+            Receive receive = gson.fromJson(message, Receive.class);
+
+            if (userList.contains(receive.color)) {
+                for (UserData user : users) {
+                    if (user.color == receive.color) {
+                        user.addLast(receive);
+                    }
+                }
+            } else {
+                userList.add(receive.color);
+                users.add(new UserData(receive));
+            }
         }
 
         broadcast(gson.toJson(users));

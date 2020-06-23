@@ -2,9 +2,7 @@ import com.google.gson.Gson;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 import java.util.List;
 import java.util.Random;
 
@@ -24,7 +22,8 @@ public class Screen extends JFrame implements MouseMotionListener, MouseListener
         addMouseMotionListener(this);
         addMouseListener(this);
         JButton button = new JButton("c");
-        button.setBounds(10,710,60,60);
+        button.setBounds(10,720,50,50);
+        button.addActionListener(actionEvent -> Client.client.send("clear"));
         add(new JPanel().add(button));
     }
 
