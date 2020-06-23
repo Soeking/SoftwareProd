@@ -23,6 +23,9 @@ public class Screen extends JFrame implements MouseMotionListener, MouseListener
         setResizable(false);
         addMouseMotionListener(this);
         addMouseListener(this);
+        JButton button = new JButton("c");
+        button.setBounds(10,710,60,60);
+        add(new JPanel().add(button));
     }
 
     public void setUser(List<User> users) {
