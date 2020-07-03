@@ -19,8 +19,6 @@ public class Screen extends JFrame implements MouseMotionListener, MouseListener
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        addMouseMotionListener(this);
-        addMouseListener(this);
         JButton button = new JButton("c");
         button.setMaximumSize(new Dimension(50, 50));
         button.setBounds(10, 720, 50, 50);
@@ -31,6 +29,8 @@ public class Screen extends JFrame implements MouseMotionListener, MouseListener
         panel.add(button);
         panel.setBounds(0,0,width,height);
         panel.setVisible(true);
+        panel.addMouseListener(this);
+        panel.addMouseMotionListener(this);
         getContentPane().add(panel);
     }
 
